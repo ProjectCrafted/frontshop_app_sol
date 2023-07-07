@@ -11,7 +11,6 @@ class navbar extends StatefulWidget {
 class _navbarState extends State<navbar> {
   @override
   Widget build(BuildContext context) {
-    Size size=MediaQuery.of(context).size;
     return Scaffold(
       bottomNavigationBar: Container(
         child: NavigationBar(
