@@ -1,6 +1,6 @@
 {
-    "name": "crafted_sol",
-    "short_name": "crafted_sol",
+    "name": "sol_app",
+    "short_name": "sol_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

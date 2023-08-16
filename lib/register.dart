@@ -1,115 +1,115 @@
 import 'package:flutter/material.dart';
+import 'square_tile.dart';
 
-class MyRegister extends StatefulWidget
-{
-  const MyRegister({super.key}) : super(key: key);
+class Myregister extends StatefulWidget {
+  const Myregister({Key? key}) : super(key: key);
 
   @override
-  _MyRegisterState<MyRegister> createState() => _MyRegisterState();
+  State<Myregister> createState() => _MyregisterState();
 }
 
-class _MyRegisterState extends State<MyRegister>
-{
+class _MyregisterState extends State<Myregister> {
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/register.jpg'),fit: BoxFit.cover)),
+        image: DecorationImage(
+          image: AssetImage('images/register.jpg'),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Stack(
           children: [
-            Container(
-                padding: EdgeInsets.only(left: 15, top: 110),
-                child: Text('Create Account',
-                  style: TextStyle(color: Colors.white, fontSize: 33),
-                )
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(height: 80),
+                  Text(
+                    'Join Us',
+                    style: TextStyle(color: Colors.white, fontSize: 33),
+                  ),
+                ],
+              ),
             ),
-            SingleChildScrollView(
-              child: Container(
-                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.5, left: 20, right: 20),
-                child: Column(
-                  children: [
-                    TextField(
-                      decoration: InputDecoration(
-                          fillColor: Colors.grey.shade100,
-                          filled: true,
-                          hintText: 'Name',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10))),
+            //divider & squarrtiles
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Divider(
+                      thickness: 0.5,
+                      color: Colors.black,
+                      height: 300,
                     ),
-                    SizedBox(
-                      height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Text(
+                      'Continue with',
+                      style: TextStyle(color: Colors.black),
                     ),
-                    TextField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                          fillColor: Colors.grey.shade100,
-                          filled: true,
-                          hintText: 'Email',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10))),
+                  ),
+                  Expanded(
+                    child: Divider(
+                      thickness: 0.5,
+                      color: Colors.black,
                     ),
-              SizedBox(
-                height: 20,
+                  ),
+                ],
               ),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                    fillColor: Colors.grey.shade100,
-                    filled: true,
-                    hintText: 'Password',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10))),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Sign In',style: TextStyle(
-                            color: Color(0xCE5117),
-                            fontSize: 28,fontWeight: FontWeight.w700),
-                        ),
-                        CircleAvatar(
-                          radius: 30,
-                          backgroundColor: Color(0xCE5117),
-                          child: IconButton(
-                            color: Colors.white,
-                            onPressed: () {},
-                            icon: Icon(Icons.arrow_forward),
-                          ),
-                        )
-                      ],
+            ),
+            //google
+            SizedBox(height: 50),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 200.0, horizontal: 0.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SquareTile(imagePath: 'images/google.png'),
+                  SizedBox(width: 10),
+                  SquareTile(imagePath: 'images/facebook.png'),
+                  SizedBox(width: 10),
+                  SquareTile(imagePath: 'images/mail.png'),
+                  SizedBox(width: 10),
+                  SquareTile(imagePath: 'images/phone.png'),
+                ],
+              ),
+            ),
+            SizedBox(height: 60),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  child: Text(
+                    'Register',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        TextButton(
-                            onPressed:() {
-                              Navigator.pushNamed(context, 'register');
-                            }, child: Text('Sing Up',style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          fontSize: 18,
-                          color: Color(0xCE5117),
-                        ),)),
-                        TextButton(
-                            onPressed:() {}, child: Text('Forgrt Password',style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          fontSize: 18,
-                          color: Color(0xCE5117),
-                        ),)),
-                      ],
-                    )
-                  ],
+                  ),
                 ),
-              ),
+              ],
+            ),
+            SizedBox(height: 70),
+            TextField(
+              obscureText: true,
+              decoration:InputDecoration(
+                fillColor: Colors.grey,
+                filled: true,
+                hintText: 'Title',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ) ,
             )
           ],
         ),
       ),
     );
-
   }
 }

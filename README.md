@@ -1,4 +1,4 @@
-# crafted_sol
+# sol_app
 
 A new Flutter project.
 

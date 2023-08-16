@@ -1,4 +1,4 @@
-package com.example.crafted_sol
+package com.example.sol_app
 
 import io.flutter.embedding.android.FlutterActivity
 
