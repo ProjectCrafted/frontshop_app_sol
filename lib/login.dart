@@ -71,7 +71,7 @@ class _MyLoginState extends State<MyLogin> {
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
-                    SizedBox(width: 5), // Reduced space
+                    SizedBox(width: 5, height: 500), // Reduced space
                     Expanded(
                       child: Divider(
                         thickness: 0.5,
@@ -155,6 +155,7 @@ class _MyLoginState extends State<MyLogin> {
                         height: 50,
                         child: ElevatedButton(
                           onPressed: () {
+                            print("ElevatedButton");
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -162,6 +163,12 @@ class _MyLoginState extends State<MyLogin> {
                               ),
                             );
                           },
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.blueGrey,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                            ),
+                          ),
                           child: Text(
                             'SIGN IN',
                             style: TextStyle(fontSize: 18),
@@ -176,6 +183,7 @@ class _MyLoginState extends State<MyLogin> {
                         height: 50,
                         child: ElevatedButton(
                           onPressed: () {
+                            print("ElevatedButton");
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -183,6 +191,12 @@ class _MyLoginState extends State<MyLogin> {
                               ),
                             );
                           },
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.blueGrey,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                            ),
+                          ),
                           child: Text(
                             'CREATE ACCOUNT',
                             style: TextStyle(fontSize: 18),
